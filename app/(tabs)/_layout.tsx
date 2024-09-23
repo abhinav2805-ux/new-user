@@ -8,17 +8,17 @@ import Header from '@/components/Navbar';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const headerColor = 'green'
+  const activeColor = '#000000'; // Black color for active icon and text
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ paddingTop: 35 }}> 
         <Header />
       </View>
-      <StatusBar barStyle="light-content" backgroundColor='green' />
+      <StatusBar barStyle="light-content" backgroundColor="#00715D" />
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+          tabBarActiveTintColor: activeColor,
           headerShown: false,
           tabBarStyle: {
             borderWidth: 2,
@@ -27,6 +27,7 @@ export default function TabLayout() {
             overflow: 'hidden',
             elevation: 4,
             height: 60,
+            paddingBottom:4,
             maxWidth: '93%',
             margin: 10,
           },
@@ -44,7 +45,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="explore"
           options={{
-            title: 'Explore',
+            title: 'Search',
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'search' : 'search-outline'} color={color} />
             ),
