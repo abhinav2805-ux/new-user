@@ -41,7 +41,10 @@ const CampaignForm = ({ onSubmit, onCancel }) => {
   };
 
   return (
+    <>
+    <Text className='text-4xl underline font-bold mb-8'>CREATE CAMPAIGN</Text>
     <View className="bg-white p-6 rounded-lg shadow-md w-4/5 "> 
+    
       <TextInput
         className="h-10 border border-gray-300 rounded px-2 mb-4"
         placeholder="Enter campaign title"
@@ -85,6 +88,7 @@ const CampaignForm = ({ onSubmit, onCancel }) => {
         </TouchableOpacity>
       </View>
     </View>
+    </>
   );
 };
 
