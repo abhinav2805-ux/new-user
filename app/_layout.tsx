@@ -1,8 +1,8 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme'; // Assuming you have this hook
@@ -11,8 +11,13 @@ import { useColorScheme } from '@/hooks/useColorScheme'; // Assuming you have th
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const router = useRouter();
+  
   // Detect the color scheme (dark or light mode)
   const colorScheme = useColorScheme();
+
+  // State to manage whether the user is signed in or not
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   // Load custom fonts using Expo
   const [loaded] = useFonts({
@@ -26,6 +31,13 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
+  // Redirect to SignIn screen if not signed in
+  useEffect(() => {
+    if (!isSignedIn) {
+      router.push('/signin');
+    }
+  }, [isSignedIn]);
+
   // Show nothing while fonts are loading
   if (!loaded) {
     return null;
@@ -35,9 +47,14 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        {/* Only show tabs if signed in */}
+        {isSignedIn && (
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        )}
+        {/* SignIn screen */}
+        <Stack.Screen name="signin" options={{ headerShown: false }} />
         <Stack.Screen name="Profile" options={{ headerShown: true }} />
-        </Stack>
+      </Stack>
     </ThemeProvider>
   );
 }
