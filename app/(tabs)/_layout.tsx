@@ -16,13 +16,13 @@ export default function TabLayout() {
         <Header />
       </View>
       <StatusBar barStyle="light-content" backgroundColor="#00715D" />
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
+      <View style={{ flex: 1, backgroundColor: 'transparent' }}>
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: activeColor,
           headerShown: false,
           tabBarStyle: {
-            borderWidth: 2,
+            borderWidth: 1,
             borderColor: '#000',
             borderRadius: 20,
             overflow: 'hidden',
@@ -31,6 +31,7 @@ export default function TabLayout() {
             paddingBottom:4,
             maxWidth: '93%',
             margin: 10,
+          //  backgroundColor: 'transparent',
           },
         }}
       >

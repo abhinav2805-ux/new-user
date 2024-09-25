@@ -52,8 +52,8 @@ const HomeScreen = () => {
         <ScrollView contentContainerStyle={styles.contentContainer}>
           {/* Scrollable Header with Capsule Style */}
           <View className="items-center mt-14 mb-8">
-            <View className="bg-green-600 px-12 py-4 rounded-full">
-              <Text className="text-white text-4xl underline font-bold">Welcome to{'\n'}WASTE YOGI</Text>
+            <View className="bg-[#18917a] px-12 py-4 rounded-full">
+              <Text className="text-white text-4xl  font-bold">WELCOME TO{'\n'}WASTE YOGI</Text>
             </View>
           </View>
 

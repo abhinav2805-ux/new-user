@@ -29,7 +29,7 @@ const Header: React.FC = ({ navigation }) => {
     <StyledView className="flex-1">
       <StyledView
         style={{ backgroundColor: '#00715D', height: 70 }} 
-        className="shadow-md absolute top-0 left-0 right-0 z-50 flex-row items-center justify-between px-4 py-4"
+        className="shadow-md absolute top-0 left-0 right-0 z-50 flex-row items-center justify-between rounded-b-2xl px-4 py-4"
       >
         {/* User Profile */}
         <StyledTouchableOpacity onPress={toggleProfileMenu}> 
