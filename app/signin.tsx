@@ -10,6 +10,7 @@ export default function SignInScreen() {
 
   const handleSignIn = () => {
     // Handle sign-in logic here
+    router.push('/(tabs)');
     console.log('Signing in with', email, password);
   };
 
