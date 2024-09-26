@@ -58,7 +58,7 @@ const HomeScreen = () => {
           </View>
 
           {/* Post Cards */}
-          <View className="bg-white p-4 rounded-2xl"> 
+          <View className="bg-[#F0FFF0] p-4 rounded-2xl"> 
             {posts.map((post, index) => (
               <LinkedInStylePost key={index} post={{ ...post, mainImage: post.images[0] }} />
             ))}

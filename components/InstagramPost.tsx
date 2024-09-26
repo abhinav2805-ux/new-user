@@ -44,7 +44,7 @@ const LinkedInStylePost: React.FC<{ post: Post }> = ({ post }) => {
   const windowWidth = Dimensions.get('window').width;
 
   return (
-    <StyledView className="bg-[white] mb-4 border border-gray-300 rounded-xl shadow-md p-4">
+    <StyledView className="bg-[#f6f6f6] mb-4 border border-gray-300 rounded-xl shadow-md p-4">
       {/* Header */}
       <StyledView className="flex-row items-center justify-between">
         <StyledView className="flex-row items-center">
