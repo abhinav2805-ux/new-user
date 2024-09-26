@@ -19,6 +19,9 @@ export default function RootLayout() {
   // State to manage whether the user is signed in or not
   const [isSignedIn, setIsSignedIn] = useState(false);
 
+  // State to manage if the component has mounted
+  const [isMounted, setIsMounted] = useState(false);
+
   // Load custom fonts using Expo
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
@@ -28,15 +31,16 @@ export default function RootLayout() {
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
+      setIsMounted(true); // Set the component as mounted after fonts are loaded
     }
   }, [loaded]);
 
-  // Redirect to SignIn screen if not signed in
+  // Redirect to SignIn screen if not signed in and the component is mounted
   useEffect(() => {
-    if (!isSignedIn) {
+    if (isMounted && !isSignedIn) {
       router.push('/signin');
     }
-  }, [isSignedIn]);
+  }, [isMounted, isSignedIn]);
 
   // Show nothing while fonts are loading
   if (!loaded) {
@@ -46,7 +50,9 @@ export default function RootLayout() {
   // Return the layout and navigation structure
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack  screenOptions={{
+        headerShown: false, 
+      }} >
         {/* Only show tabs if signed in */}
         {isSignedIn && (
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
