@@ -28,7 +28,7 @@ const Header: React.FC = ({ navigation }) => {
   return (
     <StyledView className="flex-1">
       <StyledView
-        style={{ backgroundColor: '#00715D', height: 70 }} 
+        style={{ backgroundColor: '#00715D', height: 60 }} 
         className="shadow-md absolute top-0 left-0 right-0 z-50 flex-row items-center justify-between rounded-b-2xl px-4 py-4"
       >
         {/* User Profile */}

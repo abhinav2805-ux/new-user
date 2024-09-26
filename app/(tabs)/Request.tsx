@@ -97,7 +97,7 @@ const Request = () => {
 
         <View className="flex-row justify-between w-full mb-2">
           <TouchableOpacity 
-            className="bg-green-500 flex-1 justify-center items-center p-4 mr-2 rounded-lg"
+            className="bg-green-500 flex-1 justify-center items-center p-4 mr-2 rounded-2xl"
             onPress={takePhoto}
           >
             <Ionicons name="camera-outline" size={50} color="white" />
@@ -105,11 +105,11 @@ const Request = () => {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            className="bg-green-500 flex-1 justify-center items-center p-4 ml-2 rounded-lg"
+            className="bg-green-500 flex-1 justify-center items-center p-4 ml-2 rounded-2xl"
             onPress={pickImage}
           >
             <Ionicons name="image-outline" size={50} color="white" />
-            <Text className="text-white mt-2">Upload Image</Text>
+            <Text className="text-white mt-2 ">Upload Image</Text>
           </TouchableOpacity>
         </View>
 

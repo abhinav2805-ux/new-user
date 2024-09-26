@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: 'bold',
-    textDecorationLine: 'underline', // Underline the text
+     // Underline the text
     color: '#333', // Text color
     textAlign: 'center', // Center the text inside the capsule
   },

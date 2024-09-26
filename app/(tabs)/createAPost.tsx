@@ -86,7 +86,7 @@ const CreatePost = () => {
             <Text className="text-white text-xl text-center font-bold">CANCEL</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            className="bg-[#60a5fa] p-2 rounded-xl flex-1 ml-2"
+            className="bg-[#32C13B] p-2 rounded-xl flex-1 ml-2"
             onPress={handleSubmit}
           >
             <Text className="text-white text-xl text-center font-bold">SUBMIT</Text>
